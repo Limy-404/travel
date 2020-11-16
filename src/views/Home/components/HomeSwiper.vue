@@ -13,14 +13,12 @@
     data() {
       return {
       	swiperList:[
-      		{id:'001',url:"http://pro.statics.techuangyi.com/2018/03/19/rzjEdGP5GErJCTp4PksaM3Kb.jpg?x-oss-process=image/resize,m_lfit,w_1366,h_0"},
-      		{id:'002',url:"http://5b0988e595225.cdn.sohucs.com/images/20180823/1409c77622564d959077dd6000246cb5.jpeg"},
-      		{id:'003',url:"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2576386341,3002037678&fm=15&gp=0.jpg"}
+      		{id:'001',url:"//imgs.qunarzz.com/vs_ceph_vcimg/1cfbdaa2682ada2f854ea6114b3677c8.jpeg"},
+      		{id:'002',url:"//imgs.qunarzz.com/vs_ceph_vcimg/7176acd77332a433af9636eb9a2c338c.jpeg"},
+      		{id:'003',url:"//imgs.qunarzz.com/vs_ceph_vcimg/569cae4ae98e9793f7341e85eed73c54.jpeg"}
       	],
         swiperOptions: {
-          pagination: {
-            el: '.swiper-pagination'
-          },
+          pagination:'.swiper-pagination',
           autoplay:5000,
           loop:true
           // Some Swiper option/callback...
@@ -30,7 +28,7 @@
   }
 </script>
 
-<style scoped>
+<style scoped lang="less">
 	.swiper{
 		width:100%;
 		height:0;
@@ -43,8 +41,9 @@
 	.swiper-slide img{
 		width:100%;
 		height:145px;
+    // margin-bottom:-0.1rem;
 	}
-	.swiper-pagination{
-		background:#f40 !important;
+	.swiper-pagination /deep/ .swiper-pagination-bullet{
+		background:rgba(255,255,255,0.8);
 	}
 </style>
