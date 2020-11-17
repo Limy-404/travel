@@ -30,7 +30,7 @@
 				],
 				swiperOptions: {
 		      pagination:'.swiper-pagination',
-		      autoplay:7000,
+		      autoplay:false,
 		      loop:true
 		      // Some Swiper option/callback...
 		    }

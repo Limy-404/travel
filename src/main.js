@@ -7,7 +7,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 // 引入样式文件
 import './assets/styles/reset.css'
 import './assets/styles/iconfont.css'
-import './assets/styles/base.css'
+import './assets/styles/mixnin.less'
+import './assets/styles/border.css'
 // import 'swiper/swiper-bundle.css'
 import '../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.css'
 
