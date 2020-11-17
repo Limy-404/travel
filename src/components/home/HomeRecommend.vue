@@ -5,7 +5,7 @@
 			<li class="item border-bottom" v-for='(item,index) of recommendList' :key='index'>
 				<img :src='item.url' alt="">
 				<div class="item-info">
-					<p class="item-title">{{item.title}}}</p>
+					<p class="item-title">{{item.title}}</p>
 					<p class="item-desc">{{item.desc}}</p>
 					<button class="item-btn">查看详情</button>
 				</div>
@@ -17,28 +17,12 @@
 <script>
 	export default{
 		name:'HomeRecommend',
+		props:{
+			recommendList:Array
+		},
 		data(){
 			return {
-				recommendList:[
-					{
-						id:'001',
-						url:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg',
-						title:'驾一叶扁舟，寻瓯江往事',
-						desc:'驾一叶扁舟，寻瓯江往事驾一叶扁舟，寻瓯江往事驾一叶扁舟，寻瓯江往事'
-					},
-					{
-						id:'001',
-						url:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg',
-						title:'驾一叶扁舟，寻瓯江往事',
-						desc:'驾一叶扁舟，寻瓯江往事驾一叶扁舟，寻瓯江往事驾一叶扁舟，寻瓯江往事'
-					},
-					{
-						id:'001',
-						url:'//tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7d9b233c71cad13ded0013f9c9cec635.jpg',
-						title:'驾一叶扁舟，寻瓯江往事',
-						desc:'驾一叶扁舟，寻瓯江往事驾一叶扁舟，寻瓯江往事驾一叶扁舟，寻瓯江往事'
-					}
-				]
+				
 			}
 		}
 	}
@@ -51,6 +35,7 @@
 		.title{
 			padding:0.5rem;
 			background:#eee;
+			font-weight:bold;
 		}
 		.item{
 			height:6rem;

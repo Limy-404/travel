@@ -1,6 +1,6 @@
 <template>
 	<div class='icons'>
-		<swiper ref="mySwiper" :options="swiperOptions">
+		<swiper ref="mySwiper" :options="swiperOptions" v-if='showIcon'>
 			<swiper-slide v-for="(page,index) of pages" :key="index">
 				<div class="icon" v-for="(icon,index) of page" :key="index">
 					<div class="icon-img">
@@ -15,19 +15,11 @@
 
 <script>
 	export default{
+		props:{
+			iconList:Array
+		},
 		data(){
 			return{
-				iconList:[
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',text:'景点门票'},
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/flight.png',text:'景点门票'},
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/train.png',text:'景点门票'},
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/package.png',text:'景点门票'},
-					{id:'001',url:'https://picbed.qunarzz.com/f5e5770393d759578962e53ee67798c8.png',text:'景点门票'},
-					{id:'001',url:'https://picbed.qunarzz.com/a36d2288f19e54562338f4d8ef986288.png',text:'景点门票'},
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/flight.png',text:'景点门票'},
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/flight.png',text:'景点门票'},
-					{id:'001',url:'//s.qunarzz.com/homenode/images/touchheader/flight.png',text:'景点门票'},
-				],
 				swiperOptions: {
 		      pagination:'.swiper-pagination',
 		      autoplay:false,
@@ -41,14 +33,15 @@
 				const pages = [];
 				this.iconList.forEach((item,index)=>{
 					const page = Math.floor(index/8);
-					console.log(page)
 					if(!pages[page]){
 						pages[page] = [];
 					}
 					pages[page].push(item)
 				})
-				console.log(pages)
 				return pages
+			},
+			showIcon(){
+				return this.iconList.length
 			}
 		}
 	}
